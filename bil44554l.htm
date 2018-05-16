@@ -1,0 +1,255 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Web Slider</title>
+
+    <style>
+        #slider {
+            overflow: hidden;
+            position: relative;
+            border: 1px solid #ccc;
+            width: 1170px;
+            height: 358px;
+            margin: 100px auto;
+        }
+        
+        #slider>#gal {
+            transition: 1s;
+            position: relative;
+            left: 0;
+            width: 500%;
+            height: 100%;
+        }
+        
+        #slider>#gal>.items {
+            float: left;
+            width: 20%;
+        }
+        
+        #slider>#gal>.items>img {
+            width: 100%;
+            height: 100%;
+        }
+        
+        #slider:hover>#right {
+            right: 15px;
+        }
+        
+        #slider>#right {
+            transition: 0.2s;
+            background: url("pic/if_arrow-right-01_186409.png")rgba(255, 255, 255, 0.4) no-repeat 50% 50%;
+            background-size: 80%;
+            border-radius: 50%;
+            position: absolute;
+            top: 140px;
+            right: -55px;
+            //border: 1px solid red;
+            width: 50px;
+            height: 50px;
+        }
+        
+        #slider:hover>#left {
+            left: 15px;
+        }
+        
+        #slider>#left {
+            transition: 0.2s;
+            background: url("pic/if_arrow-left-01_186410.png")rgba(255, 255, 255, 0.4) no-repeat 50% 50%;
+            background-size: 80%;
+            border-radius: 50%;
+            position: absolute;
+            top: 140px;
+            left: -55px;
+            //border: 1px solid red;
+            width: 50px;
+            height: 50px;
+        }
+        
+        p {
+            -o-transition-property: inherit;
+            float: left;
+            position: absolute;
+            top: -40px;
+            font-family: iransansweb;
+            transition: 0.2s;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            text-align: center;
+            margin: 0;
+            width: 20%;
+            height: 40px;
+            line-height: 42px;
+        }
+        
+        #p1:hover {
+            font-size: 20px;
+            color: whitesmoke;
+            font-weight: bold;
+        }
+        
+        #p1 {
+            transition: 0.5s;
+            top: -40px;
+            right: 80%;
+        }
+        
+        #p2:hover {
+            font-size: 20px;
+            color: whitesmoke;
+            font-weight: bold;
+        }
+        
+        #p2 {
+            transition: 0.5s;
+            top: -40px;
+            right: 60%;
+        }
+        
+        #p3:hover {
+            font-size: 20px;
+            color: whitesmoke;
+            font-weight: bold;
+        }
+        
+        #p3 {
+            transition: 0.5s;
+            top: -40px;
+            right: 40%;
+        }
+        
+        #p4:hover {
+            font-size: 20px;
+            color: whitesmoke;
+            font-weight: bold;
+        }
+        
+        #p4 {
+            transition: 0.5s;
+            top: -40px;
+            right: 20%;
+        }
+        
+        #p5:hover {
+            font-size: 20px;
+            color: whitesmoke;
+            font-weight: bold;
+        }
+        
+        #p5 {
+            transition: 0.5s;
+            top: -40px;
+            right: 0%;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div id="slider">
+        <p id="p1">Atom Headset</p>
+        <p id="p2">Panzer Speaker</p>
+        <p id="p3">Qukitell Cellphone</p>
+        <p id="p4">Acer Monitor</p>
+        <p id="p5">Nvidia Shield</p>
+
+        <div id="gal">
+
+            <div class="items">
+                <img src="pic/1012_980_AtomSeries.v_1.jpg">
+
+            </div>
+
+            <div class="items">
+                <img src="pic/1012_980_PanzerSpeaker.v_1.jpg">
+
+            </div>
+
+            <div class="items">
+                <img src="pic/j.jpg">
+
+            </div>
+
+            <div class="items">
+                <img src="pic/main.jpg">
+
+            </div>
+
+            <div class="items">
+                <img src="pic/NVIDIA-SHIELDTV_Banner980x300.png">
+
+            </div>
+
+        </div>
+
+        <div id="right"></div>
+
+        <div id="left"></div>
+
+    </div>
+
+
+
+    <script>
+        pos = 0
+
+
+
+
+
+        right.onclick = function() {
+            if (pos > -400) {
+                pos = pos - 100;
+                gal.style.left = pos + "%";
+            } else if (pos == -400) {
+                pos = 0;
+                gal.style.left = pos + "%";
+            }
+        }
+
+        left.onclick = function() {
+            if (pos < 0) {
+                pos = pos + 100;
+                gal.style.left = pos + "%";
+            } else if (pos == 0) {
+                pos = -400;
+                gal.style.left = pos + "%";
+            }
+        }
+
+        p1.onclick = function() {
+            pos = 0;
+            gal.style.left = 0 + "%";
+        }
+
+        p2.onclick = function() {
+            pos = -100;
+            gal.style.left = pos + "%";
+        }
+
+        p3.onclick = function() {
+            pos = -200;
+            gal.style.left = pos + "%";
+        }
+
+        p4.onclick = function() {
+            pos = -300;
+            gal.style.left = pos + "%";
+        }
+
+        p5.onclick = function() {
+            pos = -400;
+            gal.style.left = pos + "%";
+        }
+    </script>
+
+
+
+</body>
+
+</html>
